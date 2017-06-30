@@ -10,6 +10,9 @@ RUN apk add --no-cache \
 COPY diff-so-fancy diff-highlight /usr/local/bin/
 
 RUN apk add --no-cache \
+    python \
+    make \
+    g++ \
     perl \
     less \
     bash \
@@ -42,4 +45,7 @@ COPY custom.aliases.bash /root/.bash_it/custom/
 RUN mkdir -p /usr/src/app
 WORKDIR /root
 
+COPY docker-entrypoint.sh /
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["bash"]
