@@ -19,6 +19,7 @@ RUN apk add --no-cache \
     ca-certificates \
     curl \
     openssh-client \
+    rsync \
     git \
     vim \
     ctags \
